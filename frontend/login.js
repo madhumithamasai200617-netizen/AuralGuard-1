@@ -8,7 +8,7 @@
    BACKEND
    ========================================================= */
 
-const API_BASE_URL = "https://aural-ze9j.onrender.com";
+const API_BASE_URL = "https://auralguard-1.onrender.com";
 
 
 /* =========================================================
