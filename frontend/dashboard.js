@@ -3,7 +3,7 @@
 // Complete dashboard.js
 // ============================================================
 
-const API_URL = "https://aural-ze9j.onrender.com";
+const API_URL = "https://auralguard-1.onrender.com";
 
 
 // ============================================================
