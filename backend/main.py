@@ -1783,7 +1783,7 @@ USER QUESTION:
     try:
 
         response = gemini_client.models.generate_content(
-            model="gemini-2.5-flash-lite",
+            model="gemini-3.5-flash-lite",
             contents=user_prompt,
             config=types.GenerateContentConfig(
                 system_instruction=system_instruction,
