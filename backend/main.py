@@ -69,7 +69,7 @@ app.add_middleware(
     "http://localhost:5500",
     "http://127.0.0.1:8000",
     "http://localhost:8000",
-    "https://aural-frontend.vercel.app"
+    "https://auralguard-1-frontend.vercel.app/"
 ],
 allow_origin_regex=r"https://.*\.vercel\.app",
 allow_credentials=True,
