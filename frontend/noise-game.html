@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuralGuard — Noise Runner</title>
+    <link rel="stylesheet" href="noise-game.css">
+</head>
+
+<body>
+
+    <div class="game-shell">
+
+        <!-- TOP BAR -->
+        <header class="game-header">
+
+            <div class="brand">
+                <img src="assets/logo.jpg" alt="AuralGuard">
+                <div>
+                    <strong>AURALGUARD</strong>
+                    <span>NOISE RUNNER</span>
+                </div>
+            </div>
+
+            <div class="game-status">
+                <span class="status-dot"></span>
+                MEDIUM PACE
+            </div>
+
+            <button id="exitGame" class="exit-button">
+                EXIT
+            </button>
+
+        </header>
+
+
+        <!-- GAME CANVAS -->
+        <canvas id="gameCanvas"></canvas>
+
+
+        <!-- HUD -->
+        <div class="hud">
+
+            <div class="hud-card exposure-card">
+
+                <div class="hud-label">
+                    NOISE EXPOSURE
+                </div>
+
+                <div class="exposure-row">
+
+                    <strong id="exposureValue">
+                        15%
+                    </strong>
+
+                    <div class="exposure-bar">
+                        <div
+                            id="exposureFill"
+                            class="exposure-fill">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="hud-card">
+
+                <span class="hud-label">
+                    NOISE HITS
+                </span>
+
+                <strong
+                    id="noiseHitsValue"
+                    class="hit-value">
+                    0 / 3
+                </strong>
+
+            </div>
+
+
+            <div class="hud-card">
+
+                <span class="hud-label">
+                    SIMULATED LEVEL
+                </span>
+
+                <strong id="dbValue">
+                    48 dB*
+                </strong>
+
+            </div>
+
+
+            <div class="hud-card">
+
+                <span class="hud-label">
+                    SCORE
+                </span>
+
+                <strong id="scoreValue">
+                    000000
+                </strong>
+
+            </div>
+
+
+            <div class="hud-card">
+
+                <span class="hud-label">
+                    DISTANCE
+                </span>
+
+                <strong id="distanceValue">
+                    0 m
+                </strong>
+
+            </div>
+
+
+            <div class="hud-card">
+
+                <span class="hud-label">
+                    SHIELD
+                </span>
+
+                <strong id="shieldValue">
+                    READY
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- LEVEL MESSAGE -->
+        <div
+            id="levelMessage"
+            class="level-message hidden">
+
+            <span id="levelNumber">
+                LEVEL 01
+            </span>
+
+            <strong id="levelTitle">
+                CITY STREETS
+            </strong>
+
+        </div>
+
+
+        <!-- BOSS WARNING -->
+        <div
+            id="bossWarning"
+            class="boss-warning hidden">
+
+            <span>⚠</span>
+
+            <div>
+                <small>EXTREME NOISE EVENT</small>
+                <strong>NOISE STORM</strong>
+            </div>
+
+        </div>
+
+
+        <!-- START SCREEN -->
+        <section
+            id="startScreen"
+            class="overlay-screen">
+
+            <div class="game-panel">
+
+                <div class="panel-icon">
+                    🎧
+                </div>
+
+                <div class="eyebrow">
+                    AURALGUARD SIMULATION
+                </div>
+
+                <h1>
+                    NOISE
+                    <span>RUNNER</span>
+                </h1>
+
+                <p>
+                    Escape the city's noise while
+                    protecting yourself from repeated
+                    high-noise exposure.
+                </p>
+
+                <div class="rules">
+
+                    <div>
+                        <span>← →</span>
+                        Change lane
+                    </div>
+
+                    <div>
+                        <span>SPACE</span>
+                        Jump
+                    </div>
+
+                    <div>
+                        <span>↓</span>
+                        Duck
+                    </div>
+
+                    <div>
+                        <span>3 HITS</span>
+                        You're out
+                    </div>
+
+                </div>
+
+                <button
+                    id="startButton"
+                    class="primary-button">
+
+                    START RUN
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- PAUSE -->
+        <section
+            id="pauseScreen"
+            class="overlay-screen hidden">
+
+            <div class="game-panel small">
+
+                <div class="eyebrow">
+                    SIMULATION PAUSED
+                </div>
+
+                <h2>
+                    RUN PAUSED
+                </h2>
+
+                <button
+                    id="resumeButton"
+                    class="primary-button">
+
+                    RESUME
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- GAME OVER -->
+        <section
+            id="gameOverScreen"
+            class="overlay-screen hidden">
+
+            <div class="game-panel result-panel">
+
+                <div class="result-icon">
+                    3
+                </div>
+
+                <div class="eyebrow danger">
+                    NOISE EXPOSURE LIMIT
+                </div>
+
+                <h2>
+                    RUN TERMINATED
+                </h2>
+
+                <p class="result-subtitle">
+                    Three noise impacts were detected.
+                </p>
+
+
+                <div class="results-grid">
+
+                    <div>
+                        <span>DISTANCE</span>
+                        <strong id="finalDistance">0 m</strong>
+                    </div>
+
+                    <div>
+                        <span>SCORE</span>
+                        <strong id="finalScore">0</strong>
+                    </div>
+
+                    <div>
+                        <span>NOISE EVENTS</span>
+                        <strong id="finalEvents">0</strong>
+                    </div>
+
+                    <div>
+                        <span>QUIET ZONES</span>
+                        <strong id="finalQuiet">0</strong>
+                    </div>
+
+                    <div>
+                        <span>MAX EXPOSURE</span>
+                        <strong id="finalExposure">0%</strong>
+                    </div>
+
+                    <div>
+                        <span>SHIELDS USED</span>
+                        <strong id="finalShields">0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="impact-report">
+
+                    <span>
+                        AI IMPACT REPORT
+                    </span>
+
+                    <p id="impactText">
+                        Analysis complete.
+                    </p>
+
+                </div>
+
+
+                <div class="result-buttons">
+
+                    <button
+                        id="restartButton"
+                        class="primary-button">
+
+                        RUN AGAIN
+
+                    </button>
+
+                    <button
+                        id="backDashboard"
+                        class="secondary-button">
+
+                        DASHBOARD
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MOBILE CONTROLS -->
+        <div class="mobile-controls">
+
+            <button id="leftBtn">
+                ←
+            </button>
+
+            <button id="duckBtn">
+                ↓
+            </button>
+
+            <button id="jumpBtn">
+                ↑
+            </button>
+
+            <button id="rightBtn">
+                →
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="noise-game.js"></script>
+
+</body>
+</html>

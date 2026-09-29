@@ -1,0 +1,16 @@
+ml/venv/
+__pycache__/
+*.pyc
+.env
+backend/.env
+ml/dataset/
+ml/ESC-50-master/
+ml/real_traffic_sources/
+ml/uploads/
+backend/uploads/
+frontend/node_modules/
+*.mp4
+*.wav
+*.zip
+ml/*.zip
+WhatsApp Image 2026-09-24 at 8.20.48 PM.jpeg

@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AuralGuard | AI Noise Analysis</title>
+
+    <link
+        rel="stylesheet"
+        href="dashboard.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     PROFESSIONAL AURALGUARD SIDEBAR
+========================================================= -->
+
+<aside
+    class="professional-sidebar"
+    id="professionalSidebar"
+>
+
+    <!-- Sidebar Header -->
+
+    <div class="sidebar-top">
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-brand-icon">
+                ✦
+            </div>
+
+            <div>
+
+                <strong>
+                    AURALGUARD
+                </strong>
+
+                <span>
+                    AI ACOUSTIC INTELLIGENCE
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="sidebar-close"
+            id="sidebarClose"
+            aria-label="Close menu"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="sidebar-divider"></div>
+
+
+    <!-- Workspace -->
+
+    <div class="sidebar-section-label">
+        WORKSPACE
+    </div>
+
+
+    <a
+        href="dashboard.html"
+        class="sidebar-item active"
+    >
+
+        <span class="sidebar-item-icon">
+            ◈
+        </span>
+
+        <span class="sidebar-item-text">
+
+            <strong>
+                Dashboard
+            </strong>
+
+            <small>
+                Acoustic overview
+            </small>
+
+        </span>
+
+    </a>
+
+
+    <!-- AI Assistant -->
+
+    <a
+        href="chatbot.html"
+        class="sidebar-item ai-assistant-item"
+    >
+
+        <span class="sidebar-item-icon ai-icon">
+            ✦
+        </span>
+
+        <span class="sidebar-item-text">
+
+            <strong>
+                AI Assistant
+            </strong>
+
+            <small>
+                Noise intelligence
+            </small>
+
+        </span>
+
+        <span class="sidebar-arrow">
+            →
+        </span>
+
+    </a>
+    <!-- Noise Runner -->
+
+<a
+    href="noise-game.html"
+    class="sidebar-item noise-runner-item"
+>
+
+    <span class="sidebar-item-icon noise-icon">
+        🎮
+    </span>
+
+    <span class="sidebar-item-text">
+
+        <strong>
+            Noise Runner
+        </strong>
+
+        <small>
+            Noise awareness game
+        </small>
+
+    </span>
+
+    <span class="sidebar-arrow">
+        →
+    </span>
+
+</a>
+
+
+
+    <!-- Analysis -->
+
+    <div class="sidebar-section-label">
+        ANALYSIS
+    </div>
+
+
+    <a
+        href="#analysis"
+        class="sidebar-item sidebar-anchor"
+    >
+
+        <span class="sidebar-item-icon">
+            ◉
+        </span>
+
+        <span class="sidebar-item-text">
+
+            <strong>
+                New Analysis
+            </strong>
+
+            <small>
+                Upload recording
+            </small>
+
+        </span>
+
+    </a>
+
+
+    <a
+        href="#results"
+        class="sidebar-item sidebar-anchor"
+    >
+
+        <span class="sidebar-item-icon">
+            ◎
+        </span>
+
+        <span class="sidebar-item-text">
+
+            <strong>
+                AI Results
+            </strong>
+
+            <small>
+                Detection insights
+            </small>
+
+        </span>
+
+    </a>
+
+
+    <a
+        href="#timeline"
+        class="sidebar-item sidebar-anchor"
+    >
+
+        <span class="sidebar-item-icon">
+            ◷
+        </span>
+
+        <span class="sidebar-item-text">
+
+            <strong>
+                Timeline
+            </strong>
+
+            <small>
+                Acoustic events
+            </small>
+
+        </span>
+
+    </a>
+
+
+    <a
+        href="#sources"
+        class="sidebar-item sidebar-anchor"
+    >
+
+        <span class="sidebar-item-icon">
+            ◌
+        </span>
+
+        <span class="sidebar-item-text">
+
+            <strong>
+                Noise Sources
+            </strong>
+
+            <small>
+                Detected sources
+            </small>
+
+        </span>
+
+    </a>
+
+
+    <a
+        href="#control"
+        class="sidebar-item sidebar-anchor"
+    >
+
+        <span class="sidebar-item-icon">
+            ◇
+        </span>
+
+        <span class="sidebar-item-text">
+
+            <strong>
+                Control Center
+            </strong>
+
+            <small>
+                Prevention strategies
+            </small>
+
+        </span>
+
+    </a>
+
+
+    <!-- Sidebar Bottom -->
+
+    <div class="sidebar-bottom">
+
+        <div class="sidebar-status">
+
+            <span></span>
+
+            <div>
+
+                <strong>
+                    AI ENGINE ONLINE
+                </strong>
+
+                <small>
+                    AuralGuard intelligence ready
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+<!-- =========================================================
+     SIDEBAR OVERLAY
+========================================================= -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+></div>
+
+
+
+<!-- =========================================================
+     BACKGROUND
+========================================================= -->
+
+<div class="background">
+
+    <div class="grid-background"></div>
+
+    <div class="ambient ambient-one"></div>
+
+    <div class="ambient ambient-two"></div>
+
+    <div class="ambient ambient-three"></div>
+
+    <div id="particles"></div>
+
+</div>
+
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<nav class="navbar">
+
+
+    <!-- Hamburger -->
+
+    <div class="menu-control">
+
+        <button
+            type="button"
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+        >
+
+            <span></span>
+
+            <span></span>
+
+            <span></span>
+
+        </button>
+
+    </div>
+
+
+
+    <!-- Brand -->
+
+    <a
+        href="index.html"
+        class="brand"
+    >
+
+        <img
+            src="assets/logo.jpg"
+            alt="AuralGuard Logo"
+            class="nav-logo-img"
+        >
+
+        <div>
+
+            <h2>
+                AuralGuard
+            </h2>
+
+            <p>
+                AI Acoustic Intelligence
+            </p>
+
+        </div>
+
+    </a>
+
+
+
+    <!-- Desktop Navigation -->
+
+    <div class="nav-links">
+
+
+        <a
+            href="#overview"
+            class="nav-link active"
+            data-section="overview"
+        >
+            Overview
+        </a>
+
+
+        <a
+            href="#analysis"
+            class="nav-link"
+            data-section="analysis"
+        >
+            New Analysis
+        </a>
+
+
+        <a
+            href="#results"
+            class="nav-link"
+            data-section="results"
+        >
+            AI Results
+        </a>
+
+
+        <a
+            href="#timeline"
+            class="nav-link"
+            data-section="timeline"
+        >
+            Timeline
+        </a>
+
+
+        <a
+            href="#sources"
+            class="nav-link"
+            data-section="sources"
+        >
+            Sources
+        </a>
+
+
+        <a
+            href="#control"
+            class="nav-link"
+            data-section="control"
+        >
+            Control Center
+        </a>
+
+
+    </div>
+
+
+
+    <!-- Right Navigation -->
+
+    <div class="nav-right">
+
+
+        <div class="system-status">
+
+            <span class="status-dot"></span>
+
+            System Online
+
+        </div>
+
+
+
+        <div
+            class="user-profile-badge"
+            id="userProfileBadge"
+        >
+
+            <button
+                type="button"
+                class="profile-button"
+                id="profileButton"
+            >
+
+                <span id="userInitial">
+                    U
+                </span>
+
+            </button>
+
+
+            <span
+                class="username-text"
+                id="usernameDisplay"
+            >
+                User
+            </span>
+
+        </div>
+
+
+
+        <button
+            type="button"
+            class="logout-button"
+            id="logoutButton"
+        >
+            Logout
+        </button>
+
+
+    </div>
+
+
+</nav>
+
+
+
+<!-- =========================================================
+     MAIN DASHBOARD
+========================================================= -->
+
+<main class="dashboard">
+
+
+
+    <!-- =====================================================
+         OVERVIEW
+    ====================================================== -->
+
+    <section
+        class="dashboard-section overview-section"
+        id="overview"
+    >
+
+
+        <div class="page-heading">
+
+            <div>
+
+                <p class="eyebrow">
+                    ACOUSTIC INTELLIGENCE PLATFORM
+                </p>
+
+
+                <h1>
+
+                    Noise Monitoring
+
+                    <span>
+                        &amp; Analysis
+                    </span>
+
+                </h1>
+
+
+                <p class="page-description">
+
+                    Upload an audio or video recording
+                    to detect, analyze and understand
+                    environmental noise.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Metrics -->
+
+        <div class="metrics-grid">
+
+
+            <div class="metric-card">
+
+                <div class="metric-icon">
+                    ◉
+                </div>
+
+                <div>
+
+                    <p>
+                        ESTIMATED SOUND LEVEL
+                    </p>
+
+                    <h3 id="dbValue">
+                        —
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="metric-card">
+
+                <div class="metric-icon">
+                    ◌
+                </div>
+
+                <div>
+
+                    <p>
+                        PRIMARY NOISE SOURCE
+                    </p>
+
+                    <h3 id="sourceValue">
+                        —
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="metric-card">
+
+                <div class="metric-icon">
+                    △
+                </div>
+
+                <div>
+
+                    <p>
+                        SEVERITY
+                    </p>
+
+                    <h3 id="severityValue">
+                        —
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="metric-card">
+
+                <div class="metric-icon">
+                    ◷
+                </div>
+
+                <div>
+
+                    <p>
+                        DURATION
+                    </p>
+
+                    <h3 id="durationValue">
+                        —
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         NEW ANALYSIS
+    ====================================================== -->
+
+    <section
+        class="dashboard-section"
+        id="analysis"
+    >
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <p class="section-label">
+                    NEW ANALYSIS
+                </p>
+
+
+                <h2>
+                    Upload Recording
+                </h2>
+
+
+                <p>
+
+                    Analyze audio or video using
+                    the AuralGuard acoustic
+                    intelligence engine.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="analysis-layout">
+
+
+            <!-- Upload Panel -->
+
+            <div class="upload-panel">
+
+
+                <div
+                    class="upload-zone"
+                    id="uploadZone"
+                >
+
+
+                    <div class="upload-visual">
+
+                        <div class="upload-ring"></div>
+
+
+                        <div class="upload-core">
+
+                            <div class="upload-arrow">
+                                ↑
+                            </div>
+
+
+                            <div class="upload-wave">
+
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <h3>
+                        Upload Audio or Video
+                    </h3>
+
+
+                    <p>
+
+                        MP3, WAV, M4A, AAC, FLAC,
+                        OGG, MP4, MOV, AVI, WEBM
+                        or MKV
+
+                    </p>
+
+
+
+                    <button
+                        type="button"
+                        class="browse-button"
+                        id="browseButton"
+                    >
+                        Browse Files
+                    </button>
+
+
+
+                    <input
+                        type="file"
+                        id="fileInput"
+                        accept=".mp3,.wav,.m4a,.mp4,.mov,.avi,.webm,.aac,.flac,.ogg,.mkv"
+                    >
+
+
+                </div>
+
+
+
+                <!-- Selected File -->
+
+                <div
+                    class="selected-file"
+                    id="selectedFile"
+                    hidden
+                >
+
+                    <div class="file-information">
+
+
+                        <div class="file-icon">
+                            ♪
+                        </div>
+
+
+                        <div>
+
+                            <h4 id="fileName">
+                                —
+                            </h4>
+
+
+                            <p id="fileSize">
+                                —
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <button
+                        type="button"
+                        class="remove-file"
+                        id="removeFile"
+                    >
+                        Remove
+                    </button>
+
+
+                </div>
+
+
+
+                <!-- Analyze -->
+
+                <button
+                    type="button"
+                    class="analyze-button"
+                    id="analyzeButton"
+                    disabled
+                >
+
+                    <span>
+                        Analyze Recording
+                    </span>
+
+
+                    <span class="button-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- AI Engine -->
+
+            <div class="engine-panel">
+
+
+                <div class="engine-header">
+
+
+                    <div>
+
+                        <p class="section-label">
+                            AI ENGINE
+                        </p>
+
+
+                        <h3>
+                            Acoustic Intelligence
+                        </h3>
+
+                    </div>
+
+
+                    <span
+                        class="engine-badge"
+                        id="engineBadge"
+                    >
+                        READY
+                    </span>
+
+
+                </div>
+
+
+
+                <div class="engine-core">
+
+                    <div class="core-ring ring-one"></div>
+
+                    <div class="core-ring ring-two"></div>
+
+                    <div class="core-ring ring-three"></div>
+
+
+                    <div class="core-center">
+                        AI
+                    </div>
+
+                </div>
+
+
+
+                <div class="processing-status">
+
+                    <h4 id="processingTitle">
+                        Waiting for recording
+                    </h4>
+
+
+                    <p id="processingText">
+
+                        Upload a file to begin analysis.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="progress-container">
+
+
+                    <div class="progress-info">
+
+                        <span>
+                            Processing
+                        </span>
+
+
+                        <span id="progressValue">
+                            0%
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="progress-bar">
+
+                        <div
+                            class="progress-fill"
+                            id="progressFill"
+                        ></div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         AI RESULTS
+    ====================================================== -->
+
+    <section
+        class="dashboard-section"
+        id="results"
+    >
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <p class="section-label">
+                    AI RESULTS
+                </p>
+
+
+                <h2>
+                    Detection Results
+                </h2>
+
+
+                <p>
+                    Results generated from your uploaded recording.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="results-grid">
+
+
+            <div class="result-panel">
+
+
+                <div class="result-header">
+
+                    <h3>
+                        Analysis Summary
+                    </h3>
+
+                    <span>
+                        LIVE
+                    </span>
+
+                </div>
+
+
+
+                <div class="result-row">
+
+                    <span>
+                        Sound Level
+                    </span>
+
+                    <strong id="resultDb">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <div class="result-row">
+
+                    <span>
+                        Noise Source
+                    </span>
+
+                    <strong id="resultSource">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <div class="result-row">
+
+                    <span>
+                        Severity
+                    </span>
+
+                    <strong id="resultSeverity">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <div class="result-row">
+
+                    <span>
+                        Recording Duration
+                    </span>
+
+                    <strong id="resultDuration">
+                        —
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- Confidence -->
+
+            <div class="confidence-panel">
+
+
+                <div class="confidence-header">
+
+                    <h3>
+                        AI Confidence
+                    </h3>
+
+
+                    <span id="confidenceValue">
+                        0%
+                    </span>
+
+                </div>
+
+
+
+                <div class="confidence-bar">
+
+                    <div
+                        id="confidenceFill"
+                        class="confidence-fill"
+                    ></div>
+
+                </div>
+
+
+
+                <p id="confidenceText">
+
+                    No analysis available.
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TIMELINE
+    ====================================================== -->
+
+    <section
+        class="dashboard-section"
+        id="timeline"
+    >
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <p class="section-label">
+                    TEMPORAL ANALYSIS
+                </p>
+
+
+                <h2>
+                    Noise Timeline
+                </h2>
+
+
+                <p>
+
+                    Acoustic intensity and detected
+                    events over time.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div
+            class="timeline-panel"
+            id="timelineEmpty"
+        >
+
+            <div class="empty-icon">
+                ◴
+            </div>
+
+
+            <h3>
+                No Timeline Data
+            </h3>
+
+
+            <p>
+
+                Upload and analyze a recording
+                to generate the noise timeline.
+
+            </p>
+
+        </div>
+
+
+
+        <div
+            class="timeline-chart-container"
+            id="timelineChart"
+            hidden
+        >
+
+            <canvas
+                id="noiseChart"
+            ></canvas>
+
+        </div>
+
+
+
+        <div
+            class="event-list"
+            id="eventList"
+        ></div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SOURCES
+    ====================================================== -->
+
+    <section
+        class="dashboard-section sources-section"
+        id="sources"
+    >
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <p class="section-label">
+                    SOURCE DETECTION
+                </p>
+
+
+                <h2>
+                    Noise Sources
+                </h2>
+
+
+                <p>
+
+                    AI-detected sources identified
+                    in the recording.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div
+            class="source-empty"
+            id="sourceEmpty"
+        >
+
+            <div class="empty-icon">
+                ◌
+            </div>
+
+
+            <h3>
+                No Source Data
+            </h3>
+
+
+            <p>
+
+                Upload and analyze a recording
+                to detect its noise sources.
+
+            </p>
+
+        </div>
+
+
+
+        <div
+            class="source-list"
+            id="sourceList"
+        ></div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CONTROL CENTER
+    ====================================================== -->
+
+    <section
+        class="dashboard-section"
+        id="control"
+    >
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <p class="section-label">
+                    CONTROL CENTER
+                </p>
+
+
+                <h2>
+                    Intelligent Noise Control
+                </h2>
+
+
+                <p>
+
+                    Source-specific recommendations
+                    generated from the actual analysis.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="control-panel">
+
+
+            <div class="control-source">
+
+                <p>
+                    DETECTED SOURCE
+                </p>
+
+
+                <h3 id="controlSource">
+                    —
+                </h3>
+
+            </div>
+
+
+
+            <div class="control-explanation">
+
+                <p>
+                    WHY THIS NOISE OCCURS
+                </p>
+
+
+                <p id="controlExplanation">
+
+                    Analyze a recording to generate
+                    source-specific information.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div
+            class="recommendation-empty"
+            id="recommendationEmpty"
+        >
+
+            <div class="empty-icon">
+                ◇
+            </div>
+
+
+            <h3>
+                No Recommendations
+            </h3>
+
+
+            <p>
+
+                Recommendations will appear after
+                actual noise analysis.
+
+            </p>
+
+        </div>
+
+
+
+        <div
+            class="recommendation-list"
+            id="recommendationList"
+        ></div>
+
+
+
+        <div class="report-area">
+
+            <button
+                type="button"
+                class="report-button"
+                id="reportButton"
+                disabled
+            >
+                Generate Analysis Report
+            </button>
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+    <div>
+        AuralGuard © 2026
+    </div>
+
+    <div>
+        AI-Based Acoustic Intelligence
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div
+    class="toast"
+    id="toast"
+>
+
+    <span id="toastMessage">
+        —
+    </span>
+
+</div>
+<!-- Noise Alert -->
+
+<div id="noiseAlert" class="noise-alert">
+    <div class="noise-alert-icon">⚠</div>
+
+    <div class="noise-alert-content">
+        <strong>HIGH NOISE LEVEL</strong>
+        <span id="noiseAlertMessage">
+            Noise level has reached a dangerous level.
+        </span>
+    </div>
+
+    <button id="closeNoiseAlert" type="button">
+        ×
+    </button>
+</div>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="dashboard.js"></script>
+
+
+</body>
+
+</html>

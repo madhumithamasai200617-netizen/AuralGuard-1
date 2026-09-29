@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AuralGuard | AI Assistant</title>
+
+    <link
+        rel="stylesheet"
+        href="chatbot.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     BACKGROUND
+========================================================= -->
+
+<div class="background-grid"></div>
+
+<div class="glow glow-one"></div>
+<div class="glow glow-two"></div>
+
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<nav class="chat-navbar">
+
+    <div class="brand">
+
+        <div class="brand-logo">
+            ✦
+        </div>
+
+        <div>
+
+            <h2>AURALGUARD</h2>
+
+            <span>
+                AI NOISE INTELLIGENCE
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="nav-actions">
+
+        <a
+            href="dashboard.html"
+            class="back-button"
+        >
+            ← Dashboard
+        </a>
+
+        <div class="online-status">
+
+            <span></span>
+
+            AI ONLINE
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main class="chat-page">
+
+
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
+
+    <section class="chat-hero">
+
+        <div class="hero-icon">
+            ✦
+        </div>
+
+        <div>
+
+            <p class="hero-label">
+                AURALGUARD INTELLIGENCE
+            </p>
+
+            <h1>
+                Noise Intelligence
+                <span>Assistant</span>
+            </h1>
+
+            <p class="hero-description">
+
+                Ask questions about noise pollution,
+                AI detection, your analysis results,
+                prevention strategies and control methods.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CHAT WINDOW
+    ===================================================== -->
+
+    <section class="chat-wrapper">
+
+
+        <!-- =================================================
+             CHAT HEADER
+        ================================================= -->
+
+        <div class="chat-header">
+
+            <div class="assistant-profile">
+
+                <div class="assistant-avatar">
+                    AI
+                </div>
+
+                <div>
+
+                    <h3>
+                        AuralGuard AI
+                    </h3>
+
+                    <p>
+                        Noise Intelligence System
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="clearChatButton"
+                class="clear-button"
+                type="button"
+            >
+                Clear Chat
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             CHAT MESSAGES
+        ================================================= -->
+
+        <div
+            class="chat-messages"
+            id="chatMessages"
+        >
+
+            <!-- Welcome message -->
+
+            <div class="message bot-message">
+
+                <div class="avatar">
+                    AI
+                </div>
+
+                <div class="message-body">
+
+                    <span class="message-label">
+                        AURALGUARD AI
+                    </span>
+
+                    <div class="bubble">
+
+                        <p>
+                            Hello! I'm AuralGuard AI.
+                        </p>
+
+                        <p>
+                            I can help you understand
+                            noise pollution, detected
+                            sound sources, severity,
+                            analysis results and
+                            prevention strategies.
+                        </p>
+
+                        <p>
+                            What would you like to know?
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             QUICK QUESTIONS
+        ================================================= -->
+
+        <div class="quick-questions">
+
+            <button
+                type="button"
+                class="quick-question"
+                data-question="What is noise pollution?"
+            >
+                What is noise pollution?
+            </button>
+
+
+            <button
+                type="button"
+                class="quick-question"
+                data-question="How can noise pollution be reduced?"
+            >
+                How can it be reduced?
+            </button>
+
+
+            <button
+                type="button"
+                class="quick-question"
+                data-question="What does dB mean?"
+            >
+                What does dB mean?
+            </button>
+
+
+            <button
+                type="button"
+                class="quick-question"
+                data-question="Explain AI noise detection"
+            >
+                Explain AI detection
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             INPUT AREA
+        ================================================= -->
+
+        <div class="input-area">
+
+            <textarea
+                id="chatInput"
+                placeholder="Ask AuralGuard anything..."
+                rows="1"
+            ></textarea>
+
+
+            <!-- IMPORTANT:
+                 ID matches chatbot.js -->
+            <button
+                id="sendButton"
+                class="send-button"
+                type="button"
+                aria-label="Send message"
+            >
+
+                <span>
+                    ➤
+                </span>
+
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             DISCLAIMER
+        ================================================= -->
+
+        <div class="chat-disclaimer">
+
+            AuralGuard AI • Noise Intelligence Assistant
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<!-- =========================================================
+     CHATBOT JAVASCRIPT
+========================================================= -->
+
+<script src="chatbot.js"></script>
+
+
+</body>
+
+</html>
